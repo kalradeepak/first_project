@@ -352,6 +352,20 @@
 	<fval name="value"><value contentType="reference">
 <key type='Certificates'><id field='name' value='Certificate Store'/><key type='Certificate'><id field='dname' value='Samples Test Certificate'/></key></key>	</value></fval>
 </entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="EnvironmentalizedEntity" entityPK="2170038885778695382" parentPK="6000582372604069585">
+	<fval name="entityPk"><value contentType="reference">
+<key type='CircuitContainer'><id field='name' value='Training'/><key type='FilterCircuit'><id field='name' value='DHHS Customer'/><key type='AttributeExtractDbFilter'><id field='name' value='customer details from database'/></key></key></key>	</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="EnvironmentalizedFieldReference" entityPK="-5275064321559747366" parentPK="2170038885778695382">
+	<fval name="displayName"><value>dbConn</value></fval>
+	<fval name="entityFieldName"><value>dbConn</value></fval>
+	<fval name="index"><value>0</value></fval>
+	<fval name="selectorAttributeType"><value>com.vordel.client.manager.attr.ESPKReferenceSummaryAttribute</value></fval>
+	<fval name="selectorSearch"><value>DbConnectionGroup</value></fval>
+	<fval name="selectorType"><value>DbConnection</value></fval>
+	<fval name="value"><value contentType="reference">
+<key type='DbConnectionGroup'><id field='name' value='Database Connections'/><key type='DbConnection'><id field='name' value='NAB Open Bank Database'/></key></key>	</value></fval>
+</entity>
 <entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="EnvironmentalizedEntity" entityPK="2769038861473966192" parentPK="6000582372604069585">
 	<fval name="entityPk"><value contentType="reference">
 <key type='CircuitContainer'><id field='name' value='Training'/><key type='FilterCircuit'><id field='name' value='XML Signature Verification'/><key type='IntegrityVerifySignatureFilter'><id field='name' value='XML Signature Verification'/></key></key></key>	</value></fval>
