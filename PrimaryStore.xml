@@ -14037,7 +14037,22 @@
 	<fval name="description"><value></value></fval>
 	<fval name="logMask"><value>3</value></fval>
 	<fval name="name"><value>DHHS Security </value></fval>
-	<fval name="start"><value contentType="reference">-1970039642990527633</value></fval>
+	<fval name="start"><value contentType="reference">-8965251866825455206</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="AttributeExtractHTTPHeaderFilter" entityPK="-8965251866825455206" parentPK="-7339965431181231597">
+	<fval name="abortProcessingOnLogError"><value>0</value></fval>
+	<fval name="attributeName"><value>api.key</value></fval>
+	<fval name="base64Decode"><value>0</value></fval>
+	<fval name="category"><value contentType="reference">-5318112614829042667</value></fval>
+	<fval name="headerName"><value>KeyId</value></fval>
+	<fval name="logFailure"><value>Failed to extract attribute HTTP header</value></fval>
+	<fval name="logFatal"><value>Error occurred while extracting attributes from HTTP header. Error: ${circuit.exception}</value></fval>
+	<fval name="logMask"><value>2</value></fval>
+	<fval name="logMaskType"><value>SERVICE</value></fval>
+	<fval name="logSuccess"><value>Extracted attribute from HTTP header</value></fval>
+	<fval name="name"><value>Retrieve from HTTP header</value></fval>
+	<fval name="successNode"><value contentType="reference">-6497416211809822549</value></fval>
+	<fval name="useQueryParameter"><value>0</value></fval>
 </entity>
 <entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="SetHTTPStatusCode" entityPK="-7613970317022872747" parentPK="-7339965431181231597">
 	<fval name="abortProcessingOnLogError"><value>0</value></fval>
@@ -14050,11 +14065,44 @@
 	<fval name="logSuccess"><value>Successfully set the HTTP status code</value></fval>
 	<fval name="name"><value>HTTP Status Code</value></fval>
 </entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="PortalApiaccessReadFilter" entityPK="-6426499813645505856" parentPK="-7339965431181231597">
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="TraceFilter" entityPK="-6497416211809822549" parentPK="-7339965431181231597">
 	<fval name="abortProcessingOnLogError"><value>0</value></fval>
-	<fval name="apiIdSelector"><value>${apimgmt.apiproxy.id}</value></fval>
 	<fval name="category"><value contentType="reference">-1010357480816540880</value></fval>
-	<fval name="entityIdSelector"><value>${apimgmt.entity.id}</value></fval>
+	<fval name="doIndent"><value>0</value></fval>
+	<fval name="logFailure"><value>Failed to trace the message properties</value></fval>
+	<fval name="logFatal"><value>Error while tracing the message properties. Error: ${circuit.exception}</value></fval>
+	<fval name="logMask"><value>2</value></fval>
+	<fval name="logMaskType"><value>SERVICE</value></fval>
+	<fval name="logSuccess"><value>Traced the message properties</value></fval>
+	<fval name="name"><value>Trace Filter</value></fval>
+	<fval name="successNode"><value contentType="reference">-1970039642990527633</value></fval>
+	<fval name="traceAttributes"><value>1</value></fval>
+	<fval name="traceBody"><value>0</value></fval>
+	<fval name="traceLevel"><value>5</value></fval>
+	<fval name="traceMsg"><value>${apimgmt.apiaccess}</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="CompareAttributeFilter" entityPK="-5187660255452893398" parentPK="-7339965431181231597">
+	<fval name="abortProcessingOnLogError"><value>0</value></fval>
+	<fval name="category"><value contentType="reference">-1010357480816540880</value></fval>
+	<fval name="logFailure"><value>Filter failed</value></fval>
+	<fval name="logFatal"><value>Filter aborted due to exception</value></fval>
+	<fval name="logMask"><value>2</value></fval>
+	<fval name="logMaskType"><value>SERVICE</value></fval>
+	<fval name="logSuccess"><value>Filter passed</value></fval>
+	<fval name="matchingRule"><value>MATCH_ALL</value></fval>
+	<fval name="name"><value>Compare Attribute</value></fval>
+	<fval name="successNode"><value contentType="reference">-7613970317022872747</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="AttributeCompare" entityPK="5330321038456356610" parentPK="-5187660255452893398">
+	<fval name="attrName"><value>${apimgmt.apiaccess.enabled}</value></fval>
+	<fval name="expression"><value>true</value></fval>
+	<fval name="matchType"><value>IS</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="PortalApiaccessReadFilter" entityPK="-4944864157062167918" parentPK="-7339965431181231597">
+	<fval name="abortProcessingOnLogError"><value>0</value></fval>
+	<fval name="apiIdSelector"><value>${api.id}</value></fval>
+	<fval name="category"><value contentType="reference">-1010357480816540880</value></fval>
+	<fval name="entityIdSelector"><value>${kps.PortalApiKeyStore[api.key].applicationId}</value></fval>
 	<fval name="entityType"><value>Application</value></fval>
 	<fval name="logFailure"><value>Filter failed</value></fval>
 	<fval name="logFatal"><value>Filter aborted due to exception</value></fval>
@@ -14062,6 +14110,7 @@
 	<fval name="logMaskType"><value>SERVICE</value></fval>
 	<fval name="logSuccess"><value>Filter passed</value></fval>
 	<fval name="name"><value>Read API Access</value></fval>
+	<fval name="successNode"><value contentType="reference">-5187660255452893398</value></fval>
 	<fval name="targetAttribute"><value>apimgmt.apiaccess</value></fval>
 </entity>
 <entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="AuthenticateAPIKeyFilter" entityPK="-3405909651884617528" parentPK="-7339965431181231597">
@@ -14092,7 +14141,7 @@
 	<fval name="secretLocationName"><value>apiSecret</value></fval>
 	<fval name="secretProcessorClass"><value>com.vordel.circuit.apikeys.AuthenticateS3RequestAuthZHeader</value></fval>
 	<fval name="secretSelector"><value>${http.client.getCgiArgument(&quot;apiSecret&quot;)}</value></fval>
-	<fval name="successNode"><value contentType="reference">-1</value></fval>
+	<fval name="successNode"><value contentType="reference">-4944864157062167918</value></fval>
 	<fval name="timeStampFormat"><value>EEE, dd MMM yyyy HH:mm:ss zzz</value></fval>
 	<fval name="timeStampLocation"><value>HEADER</value></fval>
 	<fval name="timeStampLocationName"><value>Date</value></fval>
@@ -14111,7 +14160,7 @@
 	<fval name="logMaskType"><value>SERVICE</value></fval>
 	<fval name="logSuccess"><value>SSL authentication passed for ${authentication.subject.id}</value></fval>
 	<fval name="name"><value>SSL</value></fval>
-	<fval name="successNode"><value contentType="reference">-7613970317022872747</value></fval>
+	<fval name="successNode"><value contentType="reference">-3405909651884617528</value></fval>
 </entity>
 <entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="FilterCircuit" entityPK="-6683591423063815269" parentPK="-1064546295543184862">
 	<fval name="category"><value contentType="reference">8354662122183705156</value></fval>
